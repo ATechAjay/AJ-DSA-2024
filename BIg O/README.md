@@ -8,7 +8,7 @@ It provides a high-level understanding of how the algorithm's performance scales
 
 In Big-O notation, the letter `"O"` stands for `order of magnitude`. The notation is written as `O(f(n))`, where `f(n)` is a mathematical function that describes the upper bound on the running time or space complexity in relation to the input size (n).
 
-##### Common Big-O Notations:
+### Common Big-O Notations:
 
 1. O(1) - Constant Time Complexity: Represents algorithms whose running time is constant, regardless of the input size. For example: Accessing an element in an array by index, basic arithmetic operations.
 
@@ -22,7 +22,7 @@ In Big-O notation, the letter `"O"` stands for `order of magnitude`. The notatio
 
 6. O(2^n), O(n!) - Exponential and Factorial Time Complexity: Usually indicates inefficient algorithms with rapidly growing running times. For example: Recursive solutions with high redundancy.
 
-##### Use Cases of the Big-O notation:
+### Use Cases of the Big-O notation:
 
 - Choosing Efficient Algorithms: Big-O helps in selecting the most efficient algorithm for a given problem, especially as the input size increases.
 
@@ -46,7 +46,7 @@ Linear time complexity denoted as O(n), describes an algorithm whose running tim
 
 In simpler terms, if the input size increases by a constant factor, the running time of the algorithm will also increase by a proportional factor.
 
-##### Characteristics of O(n) - Linear Time Complexity:
+### Characteristics of O(n) - Linear Time Complexity:
 
 Suppose you have an algorithm that iterates through each element in an array once.
 
@@ -76,80 +76,57 @@ Operations such as iterating through an array or list, finding the maximum/minim
 
 As the input size increases, the running time increases proportionally. Doubling the input size roughly doubles the running time.
 
-##### Use Cases of the Linear time complexity O(n):
+### Use Cases of the Linear time complexity O(n):
 
-Searching for an element in an unsorted list by checking each element one by one.
+- Searching for an element in an unsorted list by checking each element one by one.
 
-Going through each element in a collection once, performing some operation.
+- Going through each element in a collection once, performing some operation.
 
-Iterating through a list to calculate the sum or average of its elements.
+- Iterating through a list to calculate the sum or average of its elements.
 
-Copying elements from one array to another, where each element is processed once.
+- Copying elements from one array to another, where each element is processed once.
 
-Reading and processing each character or element from an input source.
+- Reading and processing each character or element from an input source.
 
 In summary, Linear time complexity represents an efficient scenario where the running time grows at a steady rate with the input size. While it may not be the fastest, it is often considered reasonable and acceptable for many practical applications.
 
 # Can you explain Constant time complexity O(1)?
 
-![Constant time complexity](https://res.cloudinary.com/dxowsspd6/image/upload/v1704813782/Ajay%20Web%20Assets/O_1_yyaqlr.png)
+Constant time complexity, denoted as `O(1)`, describes an algorithm whose running time remains constant, regardless of the size of the input.
 
-Certainly! Constant time complexity, denoted as O(1), describes an algorithm whose running time remains constant, regardless of the size of the input. In other words, the execution time of the algorithm does not depend on the input size; it always takes the same amount of time to complete, regardless of how large the input is.
+In other words, the execution time of the algorithm does not depend on the input size; it always takes the same amount of time to complete, regardless of how large the input is.
 
 ### Characteristics of O(1) - Constant Time Complexity:
 
-- **Example Scenario:**
+Accessing a specific element in an array by its index.
 
-  - Accessing a specific element in an array by its index.
+```js
+const arr = ["AJ", "Prime", "Talk"];
 
-- **Behavior:**
+function logFirstTwoNames(arr) {
+  console.log(arr[0]); // O(1)
+  console.log(arr[1]); // O(1)
+}
 
-  - The running time of the algorithm is constant, meaning it does not change as the input size grows.
-  - No matter how large the input is, the algorithm executes in a fixed amount of time.
+logFirstTwoNames(arr); // O(2) => O(1)
+```
 
-- **Graphical Representation:**
+The running time of the algorithm is constant, meaning it does not change as the input size grows. No matter how large the input is, the algorithm executes in a fixed amount of time.
 
-  - On a graph where the x-axis represents the input size (n) and the y-axis represents the running time, a constant time complexity would result in a horizontal line.
+![Constant time complexity](https://res.cloudinary.com/dxowsspd6/image/upload/v1704813782/Ajay%20Web%20Assets/O_1_yyaqlr.png)
 
-- **Common Operations:**
+On a graph where the x-axis represents the input size (n) and the y-axis represents the running time, a constant time complexity would result in a `horizontal line`.
 
-  - Operations that take the same amount of time regardless of the input size.
-  - Examples include basic arithmetic operations, accessing elements in an array by index, and performing simple assignments.
+Operations that take the same amount of time regardless of the input size. Examples include basic arithmetic operations, accessing elements in an array by index, and performing simple assignments.
 
-- **Example Code:**
+The running time remains the same, regardless of how large the input is. Doubling or quadrupling the input size has no impact on the execution time.
 
-  ```javascript
-  function constantAlgorithm(arr) {
-    // Accessing the first element in the array
-    const firstElement = arr[0];
-    // Some constant-time operation
-    console.log(firstElement);
-  }
-  ```
+### Use Cases of the Constant Time Complexity:
 
-- **Scaling:**
-  - The running time remains the same, regardless of how large the input is.
-  - Doubling or quadrupling the input size has no impact on the execution time.
+- Accessing an element in an array or list by its index.
+- Performing basic arithmetic operations like addition, subtraction, multiplication, and division.
+- Assigning a value to a variable.
+- Evaluating a condition with a fixed number of comparisons.
+- Retrieving a fixed number of elements from a collection.
 
-### Use Cases:
-
-1. **Array Indexing:**
-
-   - Accessing an element in an array or list by its index.
-
-2. **Simple Arithmetic Operations:**
-
-   - Performing basic arithmetic operations like addition, subtraction, multiplication, and division.
-
-3. **Variable Assignment:**
-
-   - Assigning a value to a variable.
-
-4. **Checking a Condition:**
-
-   - Evaluating a condition with a fixed number of comparisons.
-
-5. **Retrieving Constant Amount of Data:**
-   - Retrieving a fixed number of elements from a collection.
-
-Constant time complexity is highly desirable in algorithm design because it ensures consistent and efficient performance, regardless of the input size. Operations with O(1) time complexity are considered very efficient and are often favored in practical applications where performance is critical.
+Constant time complexity is highly desirable in algorithm design because it ensures consistent and efficient performance, regardless of the input size. Operations with `O(1)` time complexity are considered very efficient and are often favored in practical applications where performance is critical.
