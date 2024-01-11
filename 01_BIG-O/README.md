@@ -379,11 +379,33 @@ The non-dominant term is the initial loop that prints individual numbers, which 
 
 ### Space Complexity Factors:
 
-- Variables, Data Structures, Function Call, Allocations.
+- Variables
+- Data Structures
+- Function Call
+- Allocations
 
-<!-- # What is Space complexity?
+# What is Heap and Stack?
 
-When ever program, Two ways to remember:
+In JavaScript, two main areas of memory are used during program execution: the stack and the heap.
 
-- Heap
-- Stack -->
+1. Stack:
+
+The stack is a region of memory that operates in a Last In, First Out (LIFO) fashion, similar to a stack of plates. It is used to keep track of function calls and local variables. When a function is called, a new stack frame is created, which includes space for local variables and function parameters.
+
+When the function completes its execution, its stack frame is popped off the stack, and the memory is freed. The stack is a limited and fixed-size memory space.
+
+2. Heap:
+
+The heap is a larger and more flexible memory space that is used for dynamic memory allocation. It is utilized for storing objects and variables that are created during the program's execution and whose memory needs cannot be determined at compile time.
+
+Variables stored in the heap have a longer lifespan than those on the stack, and they need to be explicitly deallocated to free up memory. In languages like JavaScript, memory management is often handled by a garbage collector, which automatically deallocates memory that is no longer in use. Objects, arrays, and other data structures are typically allocated in the heap.
+
+# What is Space complexity?
+
+Space complexity refers to the amount of memory space that an algorithm or program consumes during its execution. The space complexity of an algorithm is usually expressed in big O notation.
+
+Space Complexity:
+
+The space complexity of an algorithm is determined by the total space required by the algorithm in the worst-case scenario. It includes both the space used in the stack and the heap.
+
+The space complexity is often expressed using big O notation, which describes how the space requirements grow concerning the size of the input.
