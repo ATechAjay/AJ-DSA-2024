@@ -114,3 +114,304 @@ Here's a brief explanation of various operations that can be performed on differ
 6. Access: Retrieving or reading the value of a specific element in a data structure. Accessing the value at a particular index in an array.
 
 Understanding these fundamental operations is essential for designing and using data structures effectively in various computing scenarios. Each operation serves a specific purpose and plays a vital role in algorithmic tasks and application development.
+
+# Big O for the various array methods
+
+Now let's see various array methods in JavaScript and their time complexities.
+
+1. push
+
+The push method adds an element to the end of the array. The time complexity of this operation is O(1), meaning it takes constant time, regardless of the size of the array.
+
+```js
+const string = ["a", "b", "c", "d"];
+string.push("e");
+```
+
+2. pop
+
+The pop method removes the last element from the array. The time complexity of this operation is also O(1), meaning it takes constant time, regardless of the size of the array.
+
+```js
+const string = ["a", "b", "c", "d"];
+string.pop();
+```
+
+3. unshift
+
+The unshift method adds an element to the beginning of the array. The time complexity of this operation is O(n), meaning it takes linear time. This is because all the existing elements need to be re-indexed.
+
+```js
+const string = ["a", "b", "c", "d"];
+string.unshift("x");
+```
+
+4. splice
+
+The splice method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. The time complexity of this operation is O(n), meaning it takes linear time. This is because all the elements after the insertion point need to be re-indexed.
+
+````js
+const string = ["a", "b", "c", "d"];
+string.splice(2, 0, "alien");```
+````
+
+In summary, O(1) means the operation takes a constant amount of time, regardless of the size of the array. O(n) means the operation takes an amount of time linear with the size of the array.
+
+> - Lookup - O(1)
+> - Push - O(1)
+> - Insert - O(n)
+> - Delete - O(n)
+
+# Static vs. Dynamic arrays
+
+### Static Arrays:
+
+A static array is a fixed-size container that stores elements of the same data type. The size of a static array is determined at the time of declaration, and it cannot be changed during runtime.
+
+```javascript
+// Declaration of a static array with a fixed size of 5
+let staticArray = [10, 20, 30, 40, 50];
+
+// Accessing elements
+console.log(staticArray[2]); // Output: 30
+
+// Modifying elements
+staticArray[1] = 25;
+console.log(staticArray); // Output: [10, 25, 30, 40, 50]
+```
+
+#### Characteristics of the static array:
+
+- `Fixed-size`: The size of a static array is predefined and cannot be changed after declaration.
+- `Contiguous memory`: Elements are stored in contiguous memory locations.
+
+### Dynamic Arrays:
+
+A dynamic array is a resizable container that automatically adjusts its size during runtime. Dynamic arrays provide more flexibility in managing elements compared to static arrays.
+
+```javascript
+// Declaration of a dynamic array
+let dynamicArray = [10, 20, 30];
+
+// Pushing elements (resizing happens automatically)
+dynamicArray.push(40);
+dynamicArray.push(50);
+
+// Accessing elements
+console.log(dynamicArray[2]); // Output: 30
+
+// Modifying elements
+dynamicArray[1] = 25;
+console.log(dynamicArray); // Output: [10, 25, 30, 40, 50]
+```
+
+> JavaScript arrays automatically handle resizing as elements are added or removed, making them dynamic and eliminating the need for explicit resizing operations.
+
+<!--
+# Referense type
+# Context
+# Instatiation
+-->
+
+# Reference type
+
+In JavaScript, reference types are types of data that are stored by reference, rather than by value. When we work with reference types, we're essentially dealing with a pointer or reference to where the data is stored in memory.
+
+Let's see the example:
+
+```javascript
+console.log([] === []); // false
+console.log([5] === [5]); // false
+```
+
+Here, we're comparing empty an array with an item `[]` and `[5]`. Even though they look the same, they're two separate instances of arrays created in memory.
+
+Here, we're comparing an empty array as well as with the items `[]` and `[5]`. Even though they look the same, they're two separate instances of arrays created in memory.
+
+Since `JavaScript compares objects and arrays by reference`, these comparisons return `false` because they are different instances in memory.
+
+```javascript
+const obj1 = {
+  name: "Ajay",
+};
+
+const obj2 = {
+  name: "Ajay",
+};
+
+const obj3 = obj1;
+
+console.log(obj1 === obj2); // false
+console.log(obj1 === obj3); // true
+console.log(obj1 === obj1); // true
+console.log(obj3.name === obj2.name); // true
+```
+
+In this example, we're dealing with objects. `obj1` and `obj2` are two separate objects with identical properties.
+
+Even though their properties are the same, they are different instances in memory, so the comparisons `obj1 === obj2` return `false`.
+
+However, `obj1 === obj3` returns `true`. This is because `obj3` is assigned to reference the same memory location as `obj1`. So, they're essentially pointing to the same object in memory.
+
+`obj1 === obj1` returns `true` because it's comparing the object to itself.
+
+Finally, `obj3.name === obj2.name` returns `true` because both `obj3` and `obj2` reference objects with the same property values.
+
+In summary, when we're working with reference types in JavaScript, comparing them with `===` checks whether they point to the same location in memory, not whether their values are identical.
+
+# How to build our Array?
+
+Let's build our custom array using the classes and methods.
+
+### Class CustomArray:
+
+```js
+class CustomArray {
+  constructor() {
+    this.length = 0;
+    this.data = {};
+  }
+}
+```
+
+`constructor()`: This is a constructor method that initializes a new instance of the `CustomArray` class.
+
+It sets two properties: `length`, initialized to 0, and `data`, initialized as an empty object `{}`.
+
+### Method get(index):
+
+```js
+class CustomArray {
+  constructor() {
+    this.length = 0;
+    this.data = {};
+  }
+
+  get(index) {
+    return this.data[index];
+  }
+}
+```
+
+This method retrieves the value at a given index in the array. It accepts the parameter `index`, the index of the item to retrieve. Finally, it returns the item at the specified index in the array.
+
+### Method push(item):
+
+```js
+class CustomArray {
+  constructor() {
+    this.length = 0;
+    this.data = {};
+  }
+
+  get(index) {
+    return this.data[index];
+  }
+
+  push(item) {
+    this.data[this.length] = item;
+    this.length++;
+    return this.data[this.length - 1];
+  }
+}
+```
+
+This method adds an item to the end of the array. It accepts the parameter `item`, the item to be added to the array.
+
+It sets the item at the current length index of the array as well as increments the length by 1. Finally, it returns the item that was added to the array.
+
+### Method pop():
+
+```js
+class CustomArray {
+  constructor() {
+    this.length = 0;
+    this.data = {};
+  }
+
+  get(index) {
+    return this.data[index];
+  }
+
+  push(item) {
+    this.data[this.length] = item;
+    this.length++;
+    return this.data[this.length - 1];
+  }
+
+  pop() {
+    const lastItem = this.data[this.length - 1];
+    delete this.data[this.length - 1];
+    this.length--;
+    return lastItem;
+  }
+}
+```
+
+This method removes the last item from the array. It retrieves the last item from the array, then deletes the last item from the data object and decrements the length by 1. Finally, return the item that was removed from the array.
+
+### Method deleteArrayItem(index):
+
+```js
+class CustomArray {
+  constructor() {
+    this.length = 0;
+    this.data = {};
+  }
+
+  get(index) {
+    return this.data[index];
+  }
+
+  push(item) {
+    this.data[this.length] = item;
+    this.length++;
+    return this.data[this.length - 1];
+  }
+
+  pop() {
+    const lastItem = this.data[this.length - 1];
+    delete this.data[this.length - 1];
+    this.length--;
+    return lastItem;
+  }
+
+  deleteArrayItem(index) {
+    const deleteItem = this.data[index];
+    this.deleteItemFunction(index);
+    return deleteItem;
+  }
+
+  deleteItemFunction(index) {
+    for (let i = index; i < this.length; i++) {
+      this.data[i] = this.data[i + 1];
+    }
+
+    delete this.data[this.length - 1];
+    this.length--;
+  }
+}
+```
+
+This method deletes an item at a specified index from the array. It accepts the parameter `index`, the index of the item to be deleted.
+
+It retrieves the item at the specified index, calls `deleteItemFunction(index)` to delete the item at the given index, and returns the item that was deleted from the array.
+
+##### Method deleteItemFunction(index):
+
+```js
+  deleteItemFunction(index) {
+    for (let i = index; i < this.length; i++) {
+      this.data[i] = this.data[i + 1];
+    }
+
+    delete this.data[this.length - 1];
+    this.length--;
+  }
+```
+
+This method deletes an item at a specified index from the array. It accepts the parameter `index`, the index of the item to be deleted.
+
+It shifts all elements to the left from the specified index, effectively removing the item. Deletes the last item from the data object and decrements the length by 1.
+
+After defining the `CustomArray` class and its methods, an instance `arr` of this class is created. Various methods are called on this instance to demonstrate its functionality, such as `push`, `pop`, `deleteArrayItem`, and `get`.
