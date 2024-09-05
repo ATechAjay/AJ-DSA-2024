@@ -31,7 +31,7 @@
 // keys() {
 //   let keysArr = [];
 //   this.data.map(function (item) {
-// console.log(item[0]);
+//   console.log(item[0]);
 //   keysArr.push(item[0]);
 // });
 

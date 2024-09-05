@@ -1,15 +1,3 @@
-<!-- # Hash table
-
-- Objects are hash tables in JS.
-- Idempotent
-- Map
-- Set
-- Hash function
-- Hash Collision
-- O(n/k) => O(n)
-- Array Vs Hash Table
-- -->
-
 Hash tables are fundamental data structures in computer science used for efficient data storage and retrieval. They offer fast `insertion`, `deletion`, and `lookup` operations, making them valuable in various applications.
 
 > Objects are hash tables in JavaScript.
@@ -151,3 +139,5 @@ console.log(myMap2.has("firstName")); // true
 ```
 
 # Set in JavaScript?
+
+# Hash map collision
