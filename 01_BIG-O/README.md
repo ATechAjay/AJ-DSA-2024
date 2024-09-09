@@ -1,3 +1,33 @@
+##### Table of content
+
+- [What is good code and its rules?](#what-is-good-code-and-its-rules)
+  - [Characteristics of good code are:](#characteristics-of-good-code-are)
+- [What is the actual role of DSA daily as a developer?](#what-is-the-actual-role-of-dsa-daily-as-a-developer)
+- [What is Big-O?](#what-is-big-o)
+  - [Common Big-O Notations:](#common-big-o-notations)
+  - [Use Cases of the Big-O notation:](#use-cases-of-the-big-o-notation)
+- [What do you mean by upper bound?](#what-do-you-mean-by-upper-bound)
+- [Can you explain Linear time complexity O(n)?](#can-you-explain-linear-time-complexity-on)
+  - [Characteristics of O(n) - Linear Time Complexity:](#characteristics-of-on---linear-time-complexity)
+  - [Use Cases of the Linear time complexity O(n):](#use-cases-of-the-linear-time-complexity-on)
+- [Can you explain Constant time complexity O(1)?](#can-you-explain-constant-time-complexity-o1)
+  - [Characteristics of O(1) - Constant Time Complexity:](#characteristics-of-o1---constant-time-complexity)
+  - [Use Cases of the Constant Time Complexity:](#use-cases-of-the-constant-time-complexity)
+- [Can you explain Quadratic time complexity O(n^2)?](#can-you-explain-quadratic-time-complexity-on2)
+  - [Characteristics of O(n^2) - Quadratic Time Complexity:](#characteristics-of-on2---quadratic-time-complexity)
+  - [Use Cases of the Quadratic time complexity:](#use-cases-of-the-quadratic-time-complexity)
+- [The rule book for counting Big-O](#the-rule-book-for-counting-big-o)
+  - [Worst case.](#worst-case)
+  - [Remove Constants.](#remove-constants)
+  - [Different terms for inputs.](#different-terms-for-inputs)
+  - [Drop the non-dominant terms.](#drop-the-non-dominant-terms)
+- [Big O Cheat Sheet](#big-o-cheat-sheet)
+  - [Time Complexity Factors:](#time-complexity-factors)
+  - [The Rule for Counting Big O:](#the-rule-for-counting-big-o)
+  - [Space Complexity Factors:](#space-complexity-factors)
+- [What is Heap and Stack?](#what-is-heap-and-stack)
+- [What is Space complexity?](#what-is-space-complexity)
+
 # What is good code and its rules?
 
 Good code is code that is not only correct and functional but is also readable, maintainable, and scalable. Let's dive into the characteristics of good code, and then introduce two key rules associated with readability and scalability:
