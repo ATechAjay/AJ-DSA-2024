@@ -1,3 +1,37 @@
+##### Table of content
+
+---
+
+- [What are data structures?](#what-are-data-structures)
+- [What is an Algorithm?](#what-is-an-algorithm)
+- [Understanding Data Structures: Building and Utilizing](#understanding-data-structures-building-and-utilizing)
+- [How do Computers Store Data?](#how-do-computers-store-data)
+  - 1. [Central Processing Unit (CPU)?](#1-central-processing-unit-cpu)
+  - 2. [Random Access Memory (RAM)?](#2-random-access-memory-ram)
+  - 3. [Storage (Hard Drives, SSDs)?](#3-storage-hard-drives-ssds)
+- [Interplay Between CPU, RAM, and Storage?](#interplay-between-cpu-ram-and-storage)
+- [Understanding Computer Architectures: 16-bit, 32-bit, and 64-bit, as well as Bits, and Bytes?](#understanding-computer-architectures-16-bit-32-bit-and-64-bit-as-well-as-bits-and-bytes)
+  - 1. [Bits and Bytes?](#1-bits-and-bytes)
+  - 2. [16-bit Computer?](#2-16-bit-computer)
+  - 3. [32-bit Computer?](#3-32-bit-computer)
+  - 4. [64-bit Computer?](#4-64-bit-computer)
+- [Fundamental Operations on Data Structures?](#fundamental-operations-on-data-structures)
+- [Big-O for the various array methods?](#big-o-for-the-various-array-methods)
+- [Static vs. Dynamic arrays?](#static-array-vs-dynamic-array)
+  - [Static Arrays?](#static-arrays)
+    - [Characteristics of the static array?](#characteristics-of-the-static-array)
+  - [Dynamic Arrays?](#dynamic-arrays)
+- [Reference type?](#reference-type)
+- [How to build an Array?](#how-to-build-an-array)
+  - [Class - CustomArray](#1-class---customarray)
+  - [Method - get(index)](#2-method---getindex)
+  - [Method - push(item)](#3-method---pushitem)
+  - [Method - pop()](#4-method---pop)
+  - [Method - deleteArrayItem(index)](#5-method---deletearrayitemindex)
+  - [Method - deleteItemFunction(index)](#6-method---deleteitemfunctionindex)
+
+---
+
 # What are data structures?
 
 Data structures are specialized formats or arrangements that allow computers to efficiently store, organize, and manipulate data. They provide a way to structure and manage data to perform operations on that data efficiently.
@@ -34,23 +68,23 @@ In conclusion, mastering both aspectsâ€”building and utilizing data structuresâ€
 
 # How do Computers Store Data?
 
-1. Central Processing Unit (CPU):
+##### 1. Central Processing Unit (CPU):
 
 The CPU (Central Processing Unit) is the brain of the computer and is primarily responsible for processing and executing instructions.
 
 The CPU has a set of small, high-speed storage locations called registers. Data is temporarily stored in registers during processing for quick access. Registers have limited capacity, and their content is volatile, meaning it is lost when the computer is powered off.
 
-2. Random Access Memory (RAM):
+##### 2. Random Access Memory (RAM):
 
 RAM (Random Access Memory) serves as temporary storage for data that the CPU is actively using or processing. Like registers, RAM is volatile, but it offers a larger storage capacity. Data stored in RAM is quickly accessible by the CPU. RAM is used for running applications, storing active processes, and caching frequently accessed data.
 
-3. Storage (Hard Drives, SSDs):
+##### 3. Storage (Hard Drives, SSDs):
 
 Storage devices, such as hard drives and SSDs (Solid State Drives), provide long-term, non-volatile storage for data and programs. Unlike RAM, data stored in storage devices persists even when the computer is powered off. It is non-volatile storage.
 
 Storage devices are organized with file systems, enabling the storage and retrieval of files in a structured manner.
 
-#### Interplay Between CPU, RAM, and Storage:
+# Interplay Between CPU, RAM, and Storage:
 
 Data moves from storage to RAM when needed by the CPU for active processing. After processing, results may be temporarily stored in RAM before being written back to storage.
 
@@ -64,8 +98,8 @@ Understanding how data is stored across the CPU, RAM, and storage devices is fun
 
 ### 1. Bits and Bytes:
 
-- Bit: The smallest unit of data in computing, representing a binary digit (0 or 1).
-- Byte: Comprises 8 bits. It is a fundamental unit for representing characters and data in computer systems.
+- `Bit:` The smallest unit of data in computing, representing a binary digit (0 or 1).
+- `Byte:` Comprises 8 bits. It is a fundamental unit for representing characters and data in computer systems.
 
 Bytes are often denoted using symbols like KB (Kilobyte), MB (Megabyte), GB (Gigabyte), etc., to represent larger quantities of data.
 
@@ -99,27 +133,25 @@ In these examples, each group of four digits (0 or 1) represents a single hexade
 
 Here's a brief explanation of various operations that can be performed on different data structures:
 
-### Operations on Data Structures:
+1. `Sorting:` Arranging elements in a specific order, such as ascending or descending, based on a defined criterion. Such as Sorting a list of numbers in ascending order.
 
-1. Sorting: Arranging elements in a specific order, such as ascending or descending, based on a defined criterion. Such as Sorting a list of numbers in ascending order.
+2. `Deletion:` Removing an element from a data structure. Such as deleting a specific node from a linked list.
 
-2. Deletion: Removing an element from a data structure. Such as deleting a specific node from a linked list.
+3. `Insertion:` Adding a new element to a data structure. Such as Inserting a value into the middle of an array.
 
-3. Insertion: Adding a new element to a data structure. Such as Inserting a value into the middle of an array.
+4. `Traversal:` Visiting and processing each element in a data structure, often in a specific order. Such as Iterating through each node in a tree and operating.
 
-4. Traversal: Visiting and processing each element in a data structure, often in a specific order. Such as Iterating through each node in a tree and operating.
+5. `Searching:` Finding the presence or location of a specific element in a data structure. Such as Searching for a particular value in an array.
 
-5. Searching: Finding the presence or location of a specific element in a data structure. Such as Searching for a particular value in an array.
-
-6. Access: Retrieving or reading the value of a specific element in a data structure. Accessing the value at a particular index in an array.
+6. `Access:` Retrieving or reading the value of a specific element in a data structure. Accessing the value at a particular index in an array.
 
 Understanding these fundamental operations is essential for designing and using data structures effectively in various computing scenarios. Each operation serves a specific purpose and plays a vital role in algorithmic tasks and application development.
 
-# Big O for the various array methods
+# Big-O for the various array methods
 
 Now let's see various array methods in JavaScript and their time complexities.
 
-1. push
+##### 1. push
 
 The push method adds an element to the end of the array. The time complexity of this operation is O(1), meaning it takes constant time, regardless of the size of the array.
 
@@ -128,7 +160,7 @@ const string = ["a", "b", "c", "d"];
 string.push("e");
 ```
 
-2. pop
+##### 2. pop
 
 The pop method removes the last element from the array. The time complexity of this operation is also O(1), meaning it takes constant time, regardless of the size of the array.
 
@@ -137,7 +169,7 @@ const string = ["a", "b", "c", "d"];
 string.pop();
 ```
 
-3. unshift
+##### 3. unshift
 
 The unshift method adds an element to the beginning of the array. The time complexity of this operation is O(n), meaning it takes linear time. This is because all the existing elements need to be re-indexed.
 
@@ -146,7 +178,7 @@ const string = ["a", "b", "c", "d"];
 string.unshift("x");
 ```
 
-4. splice
+##### 4. splice
 
 The splice method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. The time complexity of this operation is O(n), meaning it takes linear time. This is because all the elements after the insertion point need to be re-indexed.
 
@@ -162,7 +194,7 @@ In summary, O(1) means the operation takes a constant amount of time, regardless
 > - Insert - O(n)
 > - Delete - O(n)
 
-# Static vs. Dynamic arrays
+# Static array vs. Dynamic array
 
 ### Static Arrays:
 
@@ -180,7 +212,7 @@ staticArray[1] = 25;
 console.log(staticArray); // Output: [10, 25, 30, 40, 50]
 ```
 
-#### Characteristics of the static array:
+##### Characteristics of the static array:
 
 - `Fixed-size`: The size of a static array is predefined and cannot be changed after declaration.
 - `Contiguous memory`: Elements are stored in contiguous memory locations.
@@ -206,12 +238,6 @@ console.log(dynamicArray); // Output: [10, 25, 30, 40, 50]
 ```
 
 > JavaScript arrays automatically handle resizing as elements are added or removed, making them dynamic and eliminating the need for explicit resizing operations.
-
-<!--
-# Referense type
-# Context
-# Instatiation
--->
 
 # Reference type
 
@@ -259,11 +285,11 @@ Finally, `obj3.name === obj2.name` returns `true` because both `obj3` and `obj2`
 
 In summary, when we're working with reference types in JavaScript, comparing them with `===` checks whether they point to the same location in memory, not whether their values are identical.
 
-# How to build our Array?
+# How to build an Array?
 
-Let's build our custom array using the classes and methods.
+Let's build a custom array using the `classes` and `methods`.
 
-### Class CustomArray:
+### 1. Class - CustomArray:
 
 ```js
 class CustomArray {
@@ -278,7 +304,7 @@ class CustomArray {
 
 It sets two properties: `length`, initialized to 0, and `data`, initialized as an empty object `{}`.
 
-### Method get(index):
+### 2. Method - get(index):
 
 ```js
 class CustomArray {
@@ -295,7 +321,7 @@ class CustomArray {
 
 This method retrieves the value at a given index in the array. It accepts the parameter `index`, the index of the item to retrieve. Finally, it returns the item at the specified index in the array.
 
-### Method push(item):
+### 3. Method - push(item):
 
 ```js
 class CustomArray {
@@ -320,7 +346,7 @@ This method adds an item to the end of the array. It accepts the parameter `item
 
 It sets the item at the current length index of the array as well as increments the length by 1. Finally, it returns the item that was added to the array.
 
-### Method pop():
+### 4. Method - pop():
 
 ```js
 class CustomArray {
@@ -350,7 +376,7 @@ class CustomArray {
 
 This method removes the last item from the array. It retrieves the last item from the array, then deletes the last item from the data object and decrements the length by 1. Finally, return the item that was removed from the array.
 
-### Method deleteArrayItem(index):
+### 5. Method - deleteArrayItem(index):
 
 ```js
 class CustomArray {
@@ -397,7 +423,7 @@ This method deletes an item at a specified index from the array. It accepts the 
 
 It retrieves the item at the specified index, calls `deleteItemFunction(index)` to delete the item at the given index, and returns the item that was deleted from the array.
 
-##### Method deleteItemFunction(index):
+### 6. Method - deleteItemFunction(index):
 
 ```js
   deleteItemFunction(index) {
